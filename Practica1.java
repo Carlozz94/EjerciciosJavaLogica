@@ -18,10 +18,7 @@ public class Practica1 {
         DecimalFormat format = new DecimalFormat("#.##");
         
         System.out.println("El area del triangulo es: " + format.format(triangulo(5, 6, 8)));
-		
-		// 2 Escribir un metodo para encontrar el area y la circumferencia de un circulo dado el radio
-		// Utilizar PI de la libreria de Java
-		
+
 		// 3 Escribir un metodo que muestre por consola la hora del sistema
 		// Utilizar e investigar la libreria de Java
 
@@ -37,9 +34,7 @@ public class Practica1 {
 		// 7 Encontrar el area superficial de un cubo dado un lado a
 
 		// 8 Escribir un metodo para descubrir si un año ingresado es bisiesto o no
-		
-		
-		
+
 		
 		//----------------------------------------------------------------------------------------------
 		
@@ -60,13 +55,22 @@ public class Practica1 {
     
     public static double triangulo(double a, double b,double c){
         
-        
         double p = a + b + c;
-        
         double s = p/2;
-        
         double areaF = Math.sqrt(s * (s-a) * (s-b) * (s-c));
+        
+        double verificar = a + b;
+        
+        if(verificar > c){
+            System.out.println("Es un triangulo valido");
+        }else{
+            System.out.println("No es un triangulo valido");
+        }
         
         return areaF;
     }
+    
+    // 2 Escribir un metodo para encontrar el area y la circumferencia de un circulo dado el radio
+    // Utilizar PI de la libreria de Java
+    
 }
