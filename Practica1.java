@@ -27,21 +27,22 @@ public class Practica1 {
         cantidadSeg(18000);
         
         volumenEsfera(8);
-                
         
+        volumenCono(8, 18);
+        
+        areaCubo(5);
+        
+        int year = 1900;
+        
+        if (yearBisiesto(year)) {
+            System.out.println(year + " es bisiesto");
+        } else {
+            System.out.println(year + " no es bisiesto");
+        }
+       
 
-
-		
-                
                  //    System.out.println(true && false );
 		
-		
-		
-		// 6 Escribir un metodo para encontrar el volumen de un cono a dado el radio y la altura
-		
-		// 7 Encontrar el area superficial de un cubo dado un lado a
-
-		// 8 Escribir un metodo para descubrir si un año ingresado es bisiesto o no
 
 		
 		//----------------------------------------------------------------------------------------------
@@ -127,6 +128,43 @@ public class Practica1 {
         System.out.println("El volumen de la esfera es: " + volumen);
         
         return volumen;
+    }
+    
+    // 6 Escribir un metodo para encontrar el volumen de un cono a dado el radio y la altura
+    
+    public static double volumenCono(double radio,double altura){
+        
+        double volumen = (1.0/3.0) * Math.PI * radio * radio * altura;
+        
+        System.out.println("El volumen del cono es: " + volumen);
+        
+        return volumen;
+                
+    }
+    
+    // 7 Encontrar el area superficial de un cubo dado un lado a
+    
+    public static double areaCubo(double lado){
+        
+        double area = Math.pow(lado, 2) * 6;
+        
+        System.out.println("El area de la superficie del cubo es: " + area);
+        
+        return area;
+    }
+    
+    // 8 Escribir un metodo para descubrir si un año ingresado es bisiesto o no
+    public static boolean yearBisiesto(int year){
+         
+        if (year % 4 != 0) {
+        return false;
+    } else if (year % 400 == 0) {
+        return true;
+    } else if (year % 100 == 0) {
+        return false;
+    } else {
+        return true;
+    }
     }
     
 }
