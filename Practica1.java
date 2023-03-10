@@ -2,6 +2,7 @@ package EjerciciosLogica;
 
 
 import java.text.DecimalFormat;
+import java.util.Date;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -18,16 +19,23 @@ public class Practica1 {
         DecimalFormat format = new DecimalFormat("#.##");
         
         System.out.println("El area del triangulo es: " + format.format(triangulo(5, 6, 8)));
+        
+        circulo(5);
+        
+        horaSystem();
+        
+        cantidadSeg(18000);
+        
+        volumenEsfera(8);
+                
+        
 
-		// 3 Escribir un metodo que muestre por consola la hora del sistema
-		// Utilizar e investigar la libreria de Java
 
-		// 4 Escribir un metodo que convierta n cantidad de segundos a (hora, minutos, segundos) segun sea el caso
-		// ej 3600 = "1 hora = 60 min = 3600 seg"
+		
                 
                  //    System.out.println(true && false );
 		
-		// 5 Escribir un metodo para encontrar el volumen de una esfera dado el radio
+		
 		
 		// 6 Escribir un metodo para encontrar el volumen de un cono a dado el radio y la altura
 		
@@ -72,5 +80,53 @@ public class Practica1 {
     
     // 2 Escribir un metodo para encontrar el area y la circumferencia de un circulo dado el radio
     // Utilizar PI de la libreria de Java
+    public static void circulo(double radio){
+        
+        double area = Math.PI * radio * radio;
+        
+        double perimetro = 2 * Math.PI * radio;
+        
+         DecimalFormat format = new DecimalFormat("#.##");
+        
+        System.out.println("El perimetro del circulo es: " + perimetro);
+        System.out.println("El area del circulo es: " + area);
+        
+    }
+    
+    
+    // 3 Escribir un metodo que muestre por consola la hora del sistema
+    // Utilizar e investigar la libreria de Java
+    
+    public static void horaSystem(){
+        
+        Date date = new Date();
+        
+        System.out.println("La hora del sistema es: " + date);
+    }
+    
+    // 4 Escribir un metodo que convierta n cantidad de segundos a (hora, minutos, segundos) segun sea el caso
+    // ej 3600 = "1 hora = 60 min = 3600 seg"
+    
+    public static double cantidadSeg(double segundos){
+        
+       double hora = 3600;
+       
+       double res = segundos / hora;
+       
+       System.out.println(segundos + " segundos equivale a " + res + " horas");
+       
+       return segundos;
+              
+    }
+    
+    // 5 Escribir un metodo para encontrar el volumen de una esfera dado el radio
+    public static double volumenEsfera(double radio){
+        
+        double volumen = (4.0/3.0) * Math.PI * radio * radio * radio;
+        
+        System.out.println("El volumen de la esfera es: " + volumen);
+        
+        return volumen;
+    }
     
 }
