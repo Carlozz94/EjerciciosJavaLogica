@@ -39,23 +39,23 @@ public class Practica1 {
         } else {
             System.out.println(year + " no es bisiesto");
         }
+        
+        numerosPrimos();
        
+        System.out.println("La suma aritmentica es: " + sumaAritmetica(5, 7));
+        
+        System.out.println(numeroPalindromo(10));
+        
+        System.out.println(sumaDigitos(56));
+        
+        
+        System.out.println(eliminarEspacios("Hola Mundo"));
+        
+        System.out.println(invertirCadena("Hola Mundo"));
 
                  //    System.out.println(true && false );
 		
-
 		
-		//----------------------------------------------------------------------------------------------
-		
-		// 1. Escribir mostrar en pantalla los primeros 100 numeros primos
-		// 2. Escribir un programa para sumar 2 numeros sin usar operadores aritmeticos
-		
-		// 11. Escribir un método para verificar si un numero positivo de 2 digitos es palindromo
-		// 12. Sin usar loops, escribir un metodo para sumar todos los digitos de un numero donde 99 >= n >= 10
-		// 13. Escribir un método para remover espacios en blanco de un String. ej -> "Hola Mundo" -> "HolaMundo"
-		// 15. Escribir un método para invertir un String. ej -> "Hola" -> "aloH" --- Sin usar loops
-
-        
     }
     
     
@@ -167,4 +167,73 @@ public class Practica1 {
     }
     }
     
+    // 1. Escribir mostrar en pantalla los primeros 100 numeros primos
+    public static void numerosPrimos(){
+        
+        for(int i=0; i<200; i++){
+            if(i %2 == 0){
+            System.out.println(i);
+            
+            }
+        }
+    }
+    
+    
+    // 2. Escribir un programa para sumar 2 numeros sin usar operadores aritmeticos
+ 
+    public static int sumaAritmetica(int num1, int num2){
+        while (num2 != 0) {
+            int carry = num1 & num2; // Encuentra los bits que se van a llevar
+            num1 = num1 ^ num2; // Suma los bits sin llevar
+            num2 = carry << 1; // Lleva los bits al siguiente bit
+        }
+        return num1;
+    }
+    
+    
+    // 11. Escribir un método para verificar si un numero positivo de 2 digitos es palindromo
+    public static boolean numeroPalindromo(int num){
+        
+        if(num < 10 || num > 99){
+           
+             System.out.println("El numero no corresponde a 2 digitos");
+             return false;
+            
+            
+        }
+            int digito1 = num / 10;
+            int digito2 = num % 10;
+            
+            return digito1 == digito2;
+        
+       
+    }
+    
+    //Sin usar loops, escribir un metodo para sumar todos los digitos de un numero donde 99 >= n >= 10
+    public static int sumaDigitos(int num) {
+        
+        if (num < 10 || num > 99) {
+            return -1; // el número no tiene 2 dígitos
+        }
+        int digito1 = num / 10; // primer dígito
+        int digito2 = num % 10; // segundo dígito
+        return digito1 + digito2; // devuelve la suma de los dígitos
+    }
+    
+    // 13. Escribir un método para remover espacios en blanco de un String. ej -> "Hola Mundo" -> "HolaMundo"
+    public static String eliminarEspacios(String cadena) {
+        
+        String nuevaCadena = cadena.replaceAll("\\s", "");
+        return nuevaCadena;
+    }
+    
+    
+		
+    // 15. Escribir un método para invertir un String. ej -> "Hola" -> "aloH" --- Sin usar loops
+    public static String invertirCadena(String cadena) {
+        if (cadena == null || cadena.length() <= 1) {
+            return cadena;
+        }
+        return cadena.charAt(cadena.length() - 1) + invertirCadena(cadena.substring(0, cadena.length() - 1));
+    }
 }
